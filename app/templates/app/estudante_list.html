@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>DjangoEstunate</title>
+    </head>
+    <body>
+        <a href="{% url 'estudante_new' %}">Cadastro um novo estudante</a>
+        <span>Dados de todos os estudnates cadastrados no sistema</span>
+        <table border="1">
+            <tr>
+                <th>Nome</th>
+                <th>Matricula</th>
+                <th>Curso</th>
+                <th>Ações</th>
+            </tr>
+            {% for estudante in object_list %}
+                <tr>
+                    <td>{{ estudante.nome }}</td>
+                    <td>{{ estudante.matricula }}</td>
+                    <td>{{ estudante.curso }}</td>
+                    <td>
+                        <a href="{% url 'estudante_edit' estudante.id %}">Editar</a>
+                        <a href="{% url 'estudante_delete' estudante.id %}">Excluir</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

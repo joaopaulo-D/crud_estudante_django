@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>DjangoEstunate</title>
+    </head>
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Nome</td>
+                    <td>:</td>
+                    <td>{{ form.nome }}</td>
+                </tr>
+                <tr>
+                    <td>Matricula</td>
+                    <td>:</td>
+                    <td>{{ form.matricula }}</td>
+                </tr>
+                <tr>
+                    <td>Curso</td>
+                    <td>:</td>
+                    <td>{{ form.curso }}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Salvar">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
